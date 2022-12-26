@@ -1,4 +1,4 @@
-# Arrays
+# Basics
 
 ## 1 ADT - Abstract Data Types.
 - Any data type that does not have its own implementation, and you are responsible for writing down its own implementation. That is called as an abstract data type.
@@ -24,3 +24,6 @@
 - **_Worst Case Analysis_** - the maximum amount of time that an algorithm can take to solve a problem of size n.Normally we find worst case behavious of an algorithm.
 - **_Best Case Analysis_** - The minimum amount of time that an algorithm requuire to solve a problem of size n.
 - **_Average Case Analysis_** -  The average amount of time that an algorithm require to solve a problem of size n. 
+
+### 2.3 Space Complexity
+- space complexity of an algorithm denotes the total space used or needed by the algorithm for its working, for various input sizes.
