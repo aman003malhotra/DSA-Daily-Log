@@ -4,9 +4,9 @@ import java.util.*;
 public class twoSum {
     public static void main(String[] args) {
         int[] arr = {3,2,4};
-        twoSum(arr, 6);
+        twosum(arr, 6);
     }
-    public static int[] twoSum(int[] nums, int target) {
+    public static int[] twosum(int[] nums, int target) {
         int intArray[] = new int[2];
         int count = 0;
         int left = 0;
@@ -29,7 +29,6 @@ public class twoSum {
                 left++;
             }
         }
-        // intArray = finalList.toArray(intArray);
         return intArray;
     }
 }
