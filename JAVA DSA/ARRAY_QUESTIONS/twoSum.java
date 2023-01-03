@@ -13,17 +13,16 @@ public class twoSum {
         int right = nums.length-1;
         int[][] newTwoDim = new int[nums.length][2];
         for(int i = 0 ; i<nums.length; i++){
-            newTwoDim[i][0] = nums[i];
-            newTwoDim[i][1] = i;
+            newTwoDim[i][0] = i;
+            newTwoDim[i][1] = nums[i];
         }
-        Arrays.sort(newTwoDim, Comparator.comparingDouble(o -> o[0]));
+        Arrays.sort(newTwoDim, Comparator.comparingDouble(o -> o[1]));
         while(left < right){
-            if(newTwoDim[left][0] + newTwoDim[right][0] == target){
-                intArray[count] = left;
-                count++;
-                intArray[count] = right;
+            if(newTwoDim[left][1] + newTwoDim[right][1] == target){
+                intArray[0] = newTwoDim[left][0];
+                intArray[1] = newTwoDim[right][0];
                 break;
-            }else if(newTwoDim[left][0] + newTwoDim[right][0] > target){
+            }else if(newTwoDim[left][1] + newTwoDim[right][1] > target){
                 right--;
             }else{
                 left++;
