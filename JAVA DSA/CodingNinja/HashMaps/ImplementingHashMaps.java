@@ -24,6 +24,21 @@ public class ImplementingHashMaps<K,V> {
     }
 
     private void reHash(){
+    ArrayList<MapNode<K,V>> temp = buckets;
+    buckets = new ArrayList<MapNode<K,V>>();
+    for(int i = 0; i < 2*numBuckets; i++){
+        buckets.add(null);
+    }
+    count = 0;
+    numBuckets = numBuckets*2;
+    for(int i = 0; i<temp.size(); i++){
+        MapNode<K,V> head = temp.get(i);
+        while(head !=null){
+            K key = head.key;
+            insert(key, head.value);
+            head = head.next;
+        }
+    }
 
     }
 
