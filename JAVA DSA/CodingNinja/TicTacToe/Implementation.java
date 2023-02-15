@@ -24,23 +24,40 @@ public class Implementation {
         board = new Board(player1.getSymbol(), player2.getSymbol());
         // play the game
         boolean player1Turn = true;
-         
-        while(){
+        int status = Board.INCOMPLETE;
+        while(status == Board.INCOMPLETE || status == Board.INVALIDMOVE){
             if(player1Turn){
                 System.out.println("Player 1's Turn");
                 System.out.println("Enter x: ");
                 int x = s.nextInt();
                 System.out.println("Enter y: ");
                 int y = s.nextInt();
-                board.move(player1.getSymbol(), x, y);
+                status = board.move(player1.getSymbol(), x, y);
+                if(status == Board.INVALIDMOVE){
+                    System.out.println("Invalid move !! Please try again");
+                    continue;
+                }
             }else{
-                System.out.println("Player 2's Turn");
+                System.out.println("Player 1's Turn");
                 System.out.println("Enter x: ");
                 int x = s.nextInt();
                 System.out.println("Enter y: ");
                 int y = s.nextInt();
-                board.move(player2.getSymbol(), x, y);
+                status = board.move(player1.getSymbol(), x, y);
+                if(status == Board.INVALIDMOVE){
+                    System.out.println("Invalid move !! Please try again");
+                    continue;
+                }
             }
+            player1Turn = !player1Turn;
+            board.print();
+        }
+        if(status == Board.PLAYER1WINS){
+            System.out.println("Player 1 Wins");
+        }else if(status == Board.PLAYER2WINS ){
+            System.out.println("Player 2 Wins");
+        }else{
+            System.out.println("It is a draw");
         }
     }
 
