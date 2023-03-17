@@ -8,6 +8,7 @@ public class Implementation {
 
     public static void main(String[] args) {
         Implementation t = new Implementation();
+        t.startGame();
     }
 
     public void startGame(){
@@ -27,7 +28,7 @@ public class Implementation {
         int status = Board.INCOMPLETE;
         while(status == Board.INCOMPLETE || status == Board.INVALIDMOVE){
             if(player1Turn){
-                System.out.println("Player 1's Turn");
+                System.out.println("Player 1's"+ player1.getName()+" Turn");
                 System.out.println("Enter x: ");
                 int x = s.nextInt();
                 System.out.println("Enter y: ");
@@ -38,12 +39,12 @@ public class Implementation {
                     continue;
                 }
             }else{
-                System.out.println("Player 1's Turn");
+                System.out.println("Player 2's "+ player2.getName()+" Turn");
                 System.out.println("Enter x: ");
                 int x = s.nextInt();
                 System.out.println("Enter y: ");
                 int y = s.nextInt();
-                status = board.move(player1.getSymbol(), x, y);
+                status = board.move(player2.getSymbol(), x, y);
                 if(status == Board.INVALIDMOVE){
                     System.out.println("Invalid move !! Please try again");
                     continue;

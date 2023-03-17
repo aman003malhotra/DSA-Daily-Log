@@ -55,11 +55,11 @@ public class Board {
         }
 
         // Diagnol
-        if(board[0][0] == board[1][1] && board[0][0] == board[2][2]){
+        if(board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] !=EMPTY){
             return symbol == p1Symbol ? PLAYER1WINS : PLAYER2WINS;
         }
 
-        if(board[0][2] == board[1][1] && board[0][2] == board[2][0]){
+        if(board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] !=EMPTY ){
             return symbol == p1Symbol ? PLAYER1WINS : PLAYER2WINS;
         }
 
